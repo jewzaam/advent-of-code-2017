@@ -22,7 +22,9 @@ In this example, the spreadsheet's checksum would be `8 + 4 + 6 = 18`.
 ```
 > go run part1.go
 Enter spreadsheet followed by empty row:
-1 2 3
+5 1 9 5
+7 5 3
+2 4 6 8
 
 checksum: 2
 ```
@@ -50,4 +52,12 @@ In this example, the sum of the results would be `4 + 3 + 2 = 9`.
 
 ## Running Part 2 Solution
 
+```
+> go run part2.go
+Enter spreadsheet followed by empty row:
+5 9 2 8
+9 4 7 3
+3 8 6 5
 
+checksum: 9
+```
