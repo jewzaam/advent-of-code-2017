@@ -35,3 +35,12 @@ How many steps are required to carry the data from the square identified in your
 ...           --->  49
 ```
 
+## Running Part 1 Solution
+
+```
+> go run part1.go 49
+Input found in layer 4!
+Steps required: 6
+```
+
+
