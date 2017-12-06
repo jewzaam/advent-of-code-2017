@@ -44,3 +44,25 @@ Enter puzzle input (blank line to exit):
 
 steps: 5
 ```
+
+# Part 2
+
+Now, the jumps are even stranger: after each jump, if the offset was three or more, instead decrease it by 1. Otherwise, increase it by 1 as before.
+
+Using this rule with the above example, the process now takes 10 steps, and the offset values after finding the exit are left as 2 3 2 3 -1.
+
+How many steps does it now take to reach the exit?
+
+## Running Part 1 Solution
+
+```
+> go run part2.go
+Enter puzzle input (blank line to exit):
+0
+3
+0
+1
+-3
+
+steps: 10
+```
