@@ -40,3 +40,12 @@ In the example above, 2 4 1 2 is seen again after four cycles, and so the answer
 
 How many cycles are in the infinite loop that arises from the configuration in your puzzle input?
 
+## Running Part 2 Solution
+
+```
+> go run part2.go 
+Enter puzzle input: 
+0 2 7 0
+count: 5
+steps: 4
+```
