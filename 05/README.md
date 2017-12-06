@@ -30,3 +30,17 @@ Positive jumps ("forward") move downward; negative jumps move upward. For legibi
 In this example, the exit is reached in 5 steps.
 
 How many steps does it take to reach the exit?
+
+## Running Part 1 Solution
+
+```
+> go run part1.go 
+Enter puzzle input (blank line to exit): 
+0
+3
+0
+1
+-3
+
+steps: 5
+```

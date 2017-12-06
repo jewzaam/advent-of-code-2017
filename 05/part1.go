@@ -12,6 +12,7 @@ func main() {
 
     // get the data from cli
     reader := bufio.NewReader(os.Stdin)
+    fmt.Print("Enter puzzle input (blank line to exit): \n")
 
     text, _ := reader.ReadString('\n')
     for text != "\n" {
@@ -30,15 +31,20 @@ func main() {
     }
 
 
-    x := 0
+    steps := 0
     psn := 0
-    for x < len(offsets) {
+    for true {
         v := offsets[psn]
         offsets[psn] += 1
         psn = psn + v
 
-        x += 1
+        steps += 1
+
+        // did we make it out?
+        if psn >= len(offsets) {
+            break
+        }
     }
 
-    fmt.Printf("steps: %d\n", x)
+    fmt.Printf("steps: %d\n", steps)
 }
