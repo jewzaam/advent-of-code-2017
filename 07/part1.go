@@ -6,24 +6,18 @@ import "fmt"
 import "strings"
 import "os"
 
-
-type Program struct {
-    name string
-    weight int
-    child_names []string
-    parent Program
-}
-
 func main() {
     // get the data from cli
     reader := bufio.NewReader(os.Stdin)
     fmt.Print("Enter puzzle input: \n")
 
-    programs := make(map[string]Program)
+    weights := make(map[string]int)
+    children := make(map[string][]string)
+    parent := make(map[string]string)
 
     text, _ := reader.ReadString('\n')
     for text != "\n" {
-        fmt.Printf("text: %s\n", text)
+        //fmt.Printf("text: %s\n", text)
         text = strings.Replace(text, "\n", "", -1)
         text = strings.TrimSpace(text)
 
@@ -38,21 +32,32 @@ func main() {
             os.Exit(1)
         }
 
+        weights[name] = weight
+
         // children
-        children := []string{}
         if len(split) > 2 {
             x := 3 // offset for split, gets us past the "->"
-            children = make([]string, len(split) - 3)
+            c := make([]string, len(split) - 3)
             for x < len(split) {
-                children[x-3] = strings.Replace(split[x], ",", "", -1)
+                // create child, references parent
+                c[x-3] = strings.Replace(split[x], ",", "", -1)
+                parent[c[x-3]] = name
+
                 x += 1
             }
+
+            children[name] = c
         }
 
-        programs[name] = Program{ name, weight, children }
-
-        fmt.Println(programs[name])
-
         text, _ = reader.ReadString('\n')
+    }
+
+    // who is the "bottom"?  meaning who has no parent?
+    for k := range children {
+        //fmt.Printf("k: %s, parent: %s\n", k, parent[k])
+        if parent[k] == "" {
+            fmt.Printf("bottom: %s\n", k)
+            os.Exit(0)
+        }
     }
 }
