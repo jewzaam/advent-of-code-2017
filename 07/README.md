@@ -96,4 +96,30 @@ As you can see, tknk's disc is unbalanced: ugml's stack is heavier than the othe
 
 Given that exactly one program is the wrong weight, what would its weight need to be to balance the entire tower?
 
+## Notes
 
+Got structs to work.  Have to remember it's all about the pointers.. ah, back to the good old days.  A pain to work with, but you know what you're getting.  I fixed part1 first to use struct because doing part2 would be much easier with them.
+
+## Running Part 2 Solution
+
+```
+> go run part2.go
+Enter puzzle input: 
+pbga (66)
+xhth (57)
+ebii (61)
+havc (66)
+ktlj (57)
+fwft (72) -> ktlj, cntj, xhth
+qoyq (66)
+padx (45) -> pbga, havc, qoyq
+tknk (41) -> ugml, padx, fwft
+jptl (61)
+ugml (68) -> gyxo, ebii, jptl
+gyxo (61)
+cntj (57)
+
+bottom: tknk
+unbalanced: ugml
+target: 60
+```
