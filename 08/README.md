@@ -42,3 +42,25 @@ c inc -20 if c == 10
 
 biggest: 1
 ```
+
+# Part 2
+
+To be safe, the CPU also needs to know the highest value held in any register during this process so that it can decide how much memory to allocate to these operations. For example, in the above instructions, the highest value ever held was 10 (in register c after the third instruction was evaluated).
+
+## Notes
+
+Didn't want to do a global var so have the execution of instruction return the value of the register impacted if there was a change, else 0.
+
+## Running Part 2 Solution
+
+```
+> go run part2.go 
+Enter puzzle input: 
+b inc 5 if a > 1
+a inc 1 if b < 5
+c dec -10 if a >= 1
+c inc -20 if c == 10
+
+biggest register at end: 1
+highest register value: 10
+```
